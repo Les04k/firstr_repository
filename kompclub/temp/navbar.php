@@ -12,10 +12,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Войти</a>
+          <a class="nav-link active" aria-current="page" href="login.php">Войти</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Регистрация</a>
+          <a class="nav-link" href="registr.php">Регистрация</a>
         </li>
       </ul>
     </div>
