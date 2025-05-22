@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 22 2025 г., 10:03
+-- Время создания: Май 22 2025 г., 11:54
 -- Версия сервера: 5.7.39
 -- Версия PHP: 7.2.34
 
@@ -33,16 +33,17 @@ CREATE TABLE `orders` (
   `id_tur` int(11) NOT NULL,
   `type_group` int(11) NOT NULL,
   `id_uslug` int(11) NOT NULL,
-  `date_1` date DEFAULT NULL,
-  `date_2` date DEFAULT NULL
+  `date_1` date NOT NULL,
+  `date_2` date NOT NULL,
+  `status` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'новый'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` (`id_order`, `id_user`, `id_tur`, `type_group`, `id_uslug`, `date_1`, `date_2`) VALUES
-(1, 1, 1, 2, 3, '2025-05-01', '2025-05-07');
+INSERT INTO `orders` (`id_order`, `id_user`, `id_tur`, `type_group`, `id_uslug`, `date_1`, `date_2`, `status`) VALUES
+(3, 1, 2, 1, 1, '2025-06-01', '2025-06-07', 'новый');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `users` (
   `phone` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
   `login` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL
+  `role` varchar(75) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'пользователь'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -179,13 +180,13 @@ ALTER TABLE `uslugi`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `turs`
 --
 ALTER TABLE `turs`
-  MODIFY `id_tur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_tur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT для таблицы `type_group`
